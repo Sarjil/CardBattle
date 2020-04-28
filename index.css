@@ -1,0 +1,78 @@
+*{
+    
+}
+#middle-comp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 540px;
+    background-color: rgb(65, 82, 87)
+}
+
+#header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: crimson;
+    background-color: black;
+    padding: 20px;
+    
+}
+
+#middle-left{
+    border: 1px solid black;
+    background-color: beige;
+    width: 160px;
+    background-image: url("src/images/hallway.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#middle-mid{
+    border: 1px solid black;
+    background-color: beige;
+    width: 900px;
+    background-image: url("src/images/skulls.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#middle-right{
+    border: 1px solid black;
+    background-color: beige;
+    width: 160px;
+    background-image: url("src/images/hallway.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.deck{
+	width:100%;
+	margin: 20px auto;
+	background:grey;
+	border:solid 10px black;
+	padding: 10px;
+	border-radius:10px;
+	text-align: center;
+	color:white;
+}
+
+.monster{
+	padding: 10px;
+	border: solid 1px #808080;
+	background-color: black;
+	display: inline-block;
+	border-radius: 10px;
+	font-size: 14pt;
+	text-align: center;
+	color:crimson;
+	margin: 3px;
+}
+
+.monster .attack .defense{
+	font-size:15pt;
+	font-family: sans-serif;
+}
