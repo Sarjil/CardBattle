@@ -28,10 +28,12 @@ class Cards{
         this.getDeck = this.getDeck.bind(this); 
         this.shuffle = this.shuffle.bind(this);
         this.renderDeck = this.renderDeck.bind(this);
+        this.showDeck = this.showDeck.bind(this);
         this.deck = new Array();
         this.getDeck();
         this.shuffle();
-        this.renderDeck(); 
+        this.showDeck();
+        // this.renderDeck(); 
     }
     
     
@@ -55,10 +57,10 @@ class Cards{
      for (let i = 0; i < 1000; i++) {
         let location1 = Math.floor((Math.random() * deck.length));
         let location2 = Math.floor((Math.random() * deck.length));
-        let tmp = deck[location1];
+        let temp = deck[location1];
 
         deck[location1] = deck[location2];
-        deck[location2] = tmp;
+        deck[location2] = temp;
      }
    }
 
@@ -84,6 +86,13 @@ class Cards{
 
             document.getElementById("deck").appendChild(monster);
         }
+    }
+
+    showDeck(){
+        // let showBtn = `<input type="submit" value="Show Deck" />`
+        // document.getElementById('deck').append(showBtn);
+        // showBtn.addEventListener('click', renderDeck);
+
     }
 
 }
