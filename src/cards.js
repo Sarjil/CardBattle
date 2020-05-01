@@ -42,7 +42,7 @@ class Cards{
 
       for (let i = 0; i < this.monsters.length; i++) {
               let x = Math.floor((Math.random() * this.points.length));
-              let y = Math.floor((Math.random() * this.points.length));
+              let y = Math.floor((Math.random() * (this.points.length - 1)));
               let card = { Monster: this.monsters[i], Attack: this.points[x], Defense: this.points[y] };
               deck.push(card);
               deck.push(card);

@@ -13,6 +13,7 @@ class Game{
         this.updateHp = this.updateHP.bind(this);
         this.opponentDraw = this.opponentDraw.bind(this);
         this.gameStart = this.gameStart.bind(this);
+        this.checkCards = this.checkCards.bind(this);
         this.renderHand(this.hand);
         this.renderDraw();
         this.updateHP(this.hp);
@@ -38,22 +39,23 @@ class Game{
         monster.appendChild(attack);
         monster.appendChild(defense);
 
-        document.getElementById("middle-cards").appendChild(monster); 
+        document.getElementById("player-cards").appendChild(monster); 
     }
 
     renderDraw(){
         let draw = document.createElement('div');
         draw.innerHTML = `<p> Draw </p>`;
         draw.classList.add("draw-card")
-        document.getElementById('player-hand').append(draw);
-        let monsters2 = document.getElementById("middle-cards");
-         
-        
+        document.getElementById('hand-container').append(draw);
 
+        let monsters = document.getElementById('user-card')
+        let monsters2 = document.getElementById("player-cards");    
         const that = this;
+
         draw.addEventListener('click', function(){
-            if (monsters2.childElementCount < 7) {
+            if ((monsters2.childElementCount + monsters.childElementCount) < 7) {
                 that.drawCard(); 
+                
             }else{
                 alert("Maximum number of cards is 7")
             }
@@ -116,11 +118,36 @@ class Game{
         document.getElementById("opp-card").appendChild(monster); 
     }
 
+     checkCards(){
+         let userCards = document.getElementById('user-card')
+         let board = document.getElementById('board-text')
+         let monsters = document.querySelectorAll('.monster');
+
+        if(userCards.childElementCount < 1){
+            board.innerHTML = `<p> Please play a card </p>`
+        }else if(userCards.childElementCount > 1){
+            board.innerHTML = `<p> Please play one card at a time </p>`
+            document.getElementById("player-cards").append(userCards.lastElementChild)
+        }else{
+            board.innerHTML = ""
+        }
+    }
     gameStart(hp, oppHP){
+        setInterval((this.checkCards), 1000);
         this.hp = hp;
         this.oppHP = oppHP; 
 
+        // while(!this.isOver(this.hp, this.oppHp))
         this.opponentDraw(); 
+        
+        let userCards = document.getElementById('user-card')
+        let board = document.getElementById('board-text')
+        let monsters = document.querySelectorAll('.monster');
+        
+        
+
+
+
 
     }
 

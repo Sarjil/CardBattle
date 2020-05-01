@@ -133,7 +133,7 @@ body{
 	font-family: sans-serif;
 }
 
-#middle-cards{
+#player-cards{
     display:flex;
     justify-content: center;
     align-items: end;
@@ -183,7 +183,7 @@ body{
     border: 1px solid black;
     
 }
-#player-hand{
+#hand-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,4 +194,16 @@ body{
     color: crimson;
     font-size: larger;
     font-variant: small-caps;
+}
+
+#board-text{
+    color: crimson;
+    align-self: center;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: black;
+    opacity: .85;
+    font-variant: small-caps;
+    font-size: larger;
+    border-radius: 5px;
 }

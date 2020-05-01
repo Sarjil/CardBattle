@@ -9,18 +9,21 @@ window.addEventListener("DOMContentLoaded", () => {
     const card = new Cards(); 
     const game = new Game(); 
 
-    const selected = document.getElementById('user-card')
-    const monsters = document.querySelectorAll('.monster');
+    let selected = document.getElementById('user-card')
+    let monsters = document.querySelectorAll('.monster');
 
-    monsters.forEach(monster => {
-        monster.addEventListener('click', function () {
-            selected.appendChild(monster);
-        });
-        monster.addEventListener('dblclick', function () {
-            document.getElementById("middle-cards").appendChild(monster);
-            // selected.removeChild(monster);
-        });
-    })
+    function cards(){ monsters = document.querySelectorAll('.monster')
+        monsters.forEach(monster => {
+                monster.addEventListener('click', function () {
+                selected.appendChild(monster);
+            });
+            monster.addEventListener('dblclick', function () {
+                document.getElementById("player-cards").appendChild(monster);
+            });
+        })
+    }
+    
+    setInterval((cards) , 250);
 
     // const empties = document.querySelectorAll('.empty');
 
