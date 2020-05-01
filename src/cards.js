@@ -42,7 +42,9 @@ class Cards{
 
       for (let i = 0; i < this.monsters.length; i++) {
               let x = Math.floor((Math.random() * this.points.length));
-              let y = Math.floor((Math.random() * (this.points.length - 1)));
+              let y = Math.floor((Math.random() * (this.points.length - 1))); 
+                //makes sure the monsters defense will never be 10. If defense is 
+                //10, it will be unbeatable.
               let card = { Monster: this.monsters[i], Attack: this.points[x], Defense: this.points[y] };
               deck.push(card);
               deck.push(card);

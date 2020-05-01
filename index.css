@@ -54,7 +54,7 @@ body{
     z-index: 10;
 }
 
-#opp-card{
+#enemy-card{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +136,7 @@ body{
 #player-cards{
     display:flex;
     justify-content: center;
-    align-items: end;
+    /* align-items: end; */
     border: 1px solid black;
     
 }
@@ -206,4 +206,35 @@ body{
     font-variant: small-caps;
     font-size: larger;
     border-radius: 5px;
+}
+
+#commands{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#attack, #defend{
+    color: crimson;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 10px;
+    background: black;
+	padding: 8px 20px 8px 20px;
+	border-radius: 5px;
+	color: crimson;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+	border: 1px solid red;
+    font-size: 15px;
+    transition: all .4s;
+    margin-top: 120px;
+}
+
+#attack:hover, #defend:hover{
+    border-radius: 50px;
+    background-color: crimson;
+    color:black;
+    border: 1px solid black;
+    
 }

@@ -35,6 +35,10 @@ class Game{
         defense.className = "defense";
         defense.innerHTML = `Defense: ${this.deck[i].Defense}`;
 
+        monster.getAttribute = {Name: this.deck[i].Monster,
+                                Attack: this.deck[i].Attack,
+                                Defense: this.deck[i].Defense}
+
 
         monster.appendChild(attack);
         monster.appendChild(defense);
@@ -111,11 +115,16 @@ class Game{
         defense.className = "defense";
         defense.innerHTML = `Defense: ${this.deck[i].Defense}`;
 
+        monster.getAttribute = {
+            Name: this.deck[i].Monster,
+            Attack: this.deck[i].Attack,
+            Defense: this.deck[i].Defense
+        }
 
         monster.appendChild(attack);
         monster.appendChild(defense);
 
-        document.getElementById("opp-card").appendChild(monster); 
+        document.getElementById("enemy-card").appendChild(monster); 
     }
 
      checkCards(){
@@ -124,16 +133,19 @@ class Game{
          let monsters = document.querySelectorAll('.monster');
 
         if(userCards.childElementCount < 1){
-            board.innerHTML = `<p> Please play a card </p>`
+            board.innerHTML = `<p> Please place a card </p>`
         }else if(userCards.childElementCount > 1){
-            board.innerHTML = `<p> Please play one card at a time </p>`
+            board.innerHTML = `<p> Please place one card at a time </p>`
             document.getElementById("player-cards").append(userCards.lastElementChild)
         }else{
             board.innerHTML = ""
         }
     }
+
+
     gameStart(hp, oppHP){
-        setInterval((this.checkCards), 1000);
+        setInterval((this.checkCards), 1570);
+        const that = this;
         this.hp = hp;
         this.oppHP = oppHP; 
 
@@ -141,10 +153,37 @@ class Game{
         this.opponentDraw(); 
         
         let userCards = document.getElementById('user-card')
+        let enemyCards = document.getElementById('enemy-card')
         let board = document.getElementById('board-text')
         let monsters = document.querySelectorAll('.monster');
+        let attackBtn = document.getElementById('attack');
+        let defendBtn = document.getElementById('defend');
         
-        
+        attackBtn.addEventListener('click', function () {
+            if (userCards.childElementCount === 1) {
+                let userAtk = userCards.firstElementChild.getAttribute.Attack
+                let userDfn = userCards.firstElementChild.getAttribute.Defense
+                let enemyAtk = enemyCards.firstElementChild.getAttribute.Attack
+                let enemyDfn = enemyCards.firstElementChild.getAttribute.Defense
+                
+                if(userAtk > enemyDfn){
+                    that.oppHP -= (userAtk - enemyDfn)
+                    that.updateHP();
+                }
+
+
+            } else {
+                board.innerHTML= `<p> Must place a card in order to Attack </p>`
+            }
+        });
+
+        defendBtn.addEventListener('click', function () {
+            if (userCards.childElementCount === 1) {
+
+            } else {
+                board.innerHTML = `<p> Must place a card in order to Defend </p>`
+            }
+        });
 
 
 
