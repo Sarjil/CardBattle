@@ -1,0 +1,244 @@
+body{background-color:#ccf;color:blue;height:97vh;width:100vw;display:flex;flex-direction:column}.center{display:flex;align-items:center}.card{background:white;height:50vh;width:50vw;border-radius:15px;margin-top:15px;box-shadow:3px 3px 5px 5px #00c,1px 0px 1px #00c}h2{font-size:3rem}.middle-image{border:1px solid black;background-color:beige;width:900px;background-image:url(images/skulls.jpg);background-position:center;background-repeat:no-repeat}
+
+body{
+    /* background-color: rgb(65, 82, 87) */
+    background-image: url(images/gothic1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#middle-comp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 540px;
+}
+
+#header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: crimson;
+    background-color: black;
+    padding: 20px;
+    
+}
+
+#middle-left{
+    border: 1px solid black;
+    background-color: beige;
+    width: 160px;
+    background-image: url(images/hallway.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#board{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    background-color: beige;
+    width: 900px;
+    background-image: url(images/skulls.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#user-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+#enemy-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 10;
+}
+
+#middle-right{
+    border: 1px solid black;
+    background-color: beige;
+    width: 160px;
+    background-image: url(images/hallway.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.deck{
+	width:100%;
+	margin: 20px auto;
+	background:grey;
+	border:solid 10px black;
+	padding: 10px;
+	border-radius:10px;
+	text-align: center;
+	color:white;
+}
+
+.monster{
+	padding: 10px;
+	border: solid 1px #808080;
+	background-color: black;
+	display: inline-block;
+	border-radius: 10px;
+	font-size: 12pt;
+	text-align: center;
+	color:crimson;
+    margin: 3px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.monster:hover{
+    border-radius: 10px;
+    background-color: grey;
+    color:black;
+    border: 1px solid black;
+}
+.opp-monster{
+	padding: 10px;
+	border: solid 1px #808080;
+	background-color: black;
+	display: inline-block;
+	border-radius: 10px;
+	font-size: 12pt;
+	text-align: center;
+	color:crimson;
+    margin: 3px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.opp-monster:hover{
+    border-radius: 10px;
+    background-color: grey;
+    color:black;
+    border: 1px solid black;
+}
+
+.monster .attack .defense{
+	font-size:15pt;
+	font-family: sans-serif;
+}
+
+#player-cards{
+    display:flex;
+    justify-content: center;
+    /* align-items: end; */
+    border: 1px solid black;
+    
+}
+
+.empty{
+    display: flex;
+    width: 120px;
+    height: 120px;
+    border: 3px solid red;
+    background-color: #f4f4f4;
+}
+
+.hold{
+    border: solid blue 4px;
+}
+
+.hovered{
+    background: #f4f4f4;
+    border-style: dashed;
+}
+
+.invisible{
+    display: none; 
+}
+
+.draw-card{
+    cursor: pointer;
+    margin-top: 10px;
+    background: black;
+	padding: 8px 20px 8px 20px;
+	border-radius: 5px;
+	color: crimson;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+	border: 1px solid red;
+    font-size: 15px;
+    transition: all .4s;
+}
+
+.draw-card:hover{
+    border-radius: 50px;
+    background-color: crimson;
+    color:black;
+    border: 1px solid black;
+    
+}
+#hand-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hp{
+    color: crimson;
+    font-size: larger;
+    font-variant: small-caps;
+}
+
+#board-text{
+    color: crimson;
+    align-self: center;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: black;
+    opacity: .85;
+    font-variant: small-caps;
+    font-size: larger;
+    border-radius: 5px;
+}
+
+#commands{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#attack, #defend{
+    color: crimson;
+    align-self: center;
+    cursor: pointer;
+    margin-top: 10px;
+    background: black;
+	padding: 8px 20px 8px 20px;
+	border-radius: 5px;
+	color: crimson;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+	border: 1px solid red;
+    font-size: 15px;
+    transition: all .4s;
+    margin-top: 120px;
+}
+
+#attack:hover, #defend:hover{
+    border-radius: 50px;
+    background-color: crimson;
+    color:black;
+    border: 1px solid black;
+    
+}
+
+/*# sourceMappingURL=main.css.map*/
