@@ -14,9 +14,12 @@ class Game{
         this.opponentDraw = this.opponentDraw.bind(this);
         this.gameStart = this.gameStart.bind(this);
         this.checkCards = this.checkCards.bind(this);
+        this.renderHP = this.renderHP.bind(this);
+        this.isOver = this.isOver.bind(this); 
         this.renderHand(this.hand);
         this.renderDraw();
-        this.updateHP(this.hp);
+        this.renderHP();
+        // this.updateHP();
         this.gameStart(this.hp, this.oppHP);
     }   
 
@@ -74,16 +77,15 @@ class Game{
         }
     }
 
-    updateHP(hp, oppHP){
-        this.hp = hp;
-        this.opponent = oppHP; 
-
+    renderHP(){
         let showHP = document.createElement("div");
         let opponent = document.createElement("div");
 
         showHP.classList.add("hp");
         opponent.classList.add("hp");
 
+        showHP.innerHTML = null;
+        opponent.innerHTML = null;
         showHP.innerHTML = `<p> Current HP: ${this.hp} </p>`
         opponent.innerHTML = `<p> Opponents HP: ${this.oppHP} </p>`
 
@@ -91,8 +93,17 @@ class Game{
         document.getElementById('middle-right').append(opponent);
     }
 
-    isOver(hp, oppHP){
-        if(hp === 0 || oppHP === 0){
+    updateHP(){
+        let showHP = document.getElementById('middle-left')
+        let opponent = document.getElementById('middle-right')
+        showHP.classList.add("hp");
+        opponent.classList.add("hp");
+        showHP.innerHTML = `<p> Current HP: ${this.hp} </p>`
+        opponent.innerHTML = `<p> Opponents HP: ${this.oppHP} </p>`
+    }
+
+    isOver(){
+        if(this.hp === 0 || this.oppHP === 0){
          return true; 
         }else{
             return false;
