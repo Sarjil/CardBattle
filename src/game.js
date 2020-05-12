@@ -104,12 +104,10 @@ class Game{
     }
 
     isOver(){
-        if(this.hp === 0 || this.oppHP === 0){
-            if(this.hp === 0) alert("You Lose!");
-            if(this.oppHP === 0) alert("You Win!")
+        if(this.hp <= 0 || this.oppHP <= 0){
+            if(this.hp <= 0) alert("You Lose!");
+            if(this.oppHP <= 0) alert("You Win!")
             this.gameStart(20, 20);
-        }else{
-            return false;
         }
     }
 
@@ -162,7 +160,7 @@ class Game{
 
     gameStart(hp, oppHP){
         setInterval((this.checkCards), 1570);
-        setInterval((this.isOver), 250); 
+        setInterval((this.isOver), 50); 
 
         const that = this;
         this.hp = hp;
