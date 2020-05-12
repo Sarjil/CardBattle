@@ -25,6 +25,9 @@ body{
 }
 
 #middle-left{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
     border: 1px solid black;
     background-color: beige;
     width: 160px;
@@ -65,6 +68,9 @@ body{
 }
 
 #middle-right{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
     border: 1px solid black;
     background-color: beige;
     width: 160px;
@@ -216,7 +222,7 @@ body{
     
 }
 
-#attack, #defend{
+#attack, #defend, #discard{
     color: crimson;
     align-self: center;
     cursor: pointer;
