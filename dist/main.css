@@ -1,6 +1,8 @@
+body{background-color:#ccf;color:blue;height:97vh;width:100vw;display:flex;flex-direction:column}.center{display:flex;align-items:center}.card{background:white;height:50vh;width:50vw;border-radius:15px;margin-top:15px;box-shadow:3px 3px 5px 5px #00c,1px 0px 1px #00c}h2{font-size:3rem}.middle-image{border:1px solid black;background-color:beige;width:900px;background-image:url(images/skulls.jpg);background-position:center;background-repeat:no-repeat}
+
 body{
     /* background-color: rgb(65, 82, 87) */
-    background-image: url("src/images/gothic1.jpg");
+    background-image: url(images/gothic1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -23,13 +25,10 @@ body{
 }
 
 #middle-left{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
     border: 1px solid black;
     background-color: beige;
     width: 160px;
-    background-image: url("src/images/hallway.jpg");
+    background-image: url(images/hallway.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,7 +41,7 @@ body{
     border: 1px solid black;
     background-color: beige;
     width: 900px;
-    background-image: url("src/images/skulls.jpg");
+    background-image: url(images/skulls.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -66,13 +65,10 @@ body{
 }
 
 #middle-right{
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-between;
     border: 1px solid black;
     background-color: beige;
     width: 160px;
-    background-image: url("src/images/hallway.jpg");
+    background-image: url(images/hallway.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -220,7 +216,7 @@ body{
     
 }
 
-#attack, #defend, #discard{
+#attack, #defend{
     color: crimson;
     align-self: center;
     cursor: pointer;
@@ -244,3 +240,5 @@ body{
     border: 1px solid black;
     
 }
+
+/*# sourceMappingURL=main.css.map*/
