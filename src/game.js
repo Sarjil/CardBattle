@@ -106,8 +106,8 @@ class Game{
     isOver(){
         if(this.hp <= 0 || this.oppHP <= 0){
             if(this.hp <= 0) alert("You Lose!");
-            if(this.oppHP <= 0) alert("You Win!")
-            this.gameStart(20, 20);
+            if(this.oppHP <= 0) alert("You 44!");
+            this.gameStart()
         }
     }
 
@@ -165,8 +165,6 @@ class Game{
         const that = this;
         this.hp = hp;
         this.oppHP = oppHP; 
-
-        // while(!this.isOver(this.hp, this.oppHp))
         this.opponentDraw(); 
         
         let userCards = document.getElementById('user-card')
@@ -217,11 +215,8 @@ class Game{
         }
 
         function discard(){
-            if(playerDiscard.childElementCount > 1){
-                playerDiscard.removeChild(playerDiscard.firstChild); 
-            }
             discardBtn.addEventListener('click', function () {
-                playerDiscard.appendChild(userCards.lastChild);
+                userCards.removeChild(userCards.lastChild);
             });
         }
 

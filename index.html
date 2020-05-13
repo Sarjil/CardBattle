@@ -11,7 +11,45 @@
       </body>
   </head>
   
-  <h1 id="header"> Monster Card Battle </h1>
+  <h1 id="header"> 
+    <p></p>
+    <p> Monster Card Battle </p>
+    <button id="instruction-modal"> Instructions </button>
+  </h1>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Welcome to Monster Card Battle! </h3>
+        <p id="instructional"> Each game starts off with the player </br>
+        starting with five cards in hand. The opponent </br>
+        has one card on the playing field. Each </br>
+        player must only play one card at a time.</br>
+        The objective is to play a card with an Attack </br>
+        Power higher than the opponents Defense Power. </br>
+        If the attack is successful, the opponents card </br>
+        will be defeated and the difference between the </br>
+        Attack and Defense will be deducted from that players HP. </br>
+        First player to reach 0 loses. </p>
+    </div>
+  </div>
+
+  <script>
+    let modal = document.getElementById("myModal");
+    let btn = document.getElementById("instruction-modal");
+    let span = document.getElementsByClassName("close")[0];
+    btn.onclick = function(){ 
+        modal.style.display= "block";
+    }
+    span.onclick = function(){
+        modal.style.display = "none";
+    }
+    window.onclick = function(e){
+        if(e.target === modal){
+            modal.style.display = "none";
+        }
+    }
+  </script>
 
   <div id = "middle-comp">
     
@@ -42,8 +80,6 @@
     <div id="player-cards">  </div>
   </div>
 
-  <div class="deck">
-    <div id="deck"></div>
-  </div>
+  
 
 </html>

@@ -9,13 +9,16 @@ window.addEventListener("DOMContentLoaded", () => {
     const card = new Cards(); 
     const game = new Game(); 
 
-    let userCards = document.getElementById('user-card')
-    let enemyCards = document.getElementById('enemy-discard')
+
+
+
+    let userCards = document.getElementById('user-card');
+    let enemyCards = document.getElementById('enemy-discard');
     let monsters = document.querySelectorAll('.monster');
-    let oppMonsters = document.querySelectorAll('.opp-monster')
+    let oppMonsters = document.querySelectorAll('.opp-monster');
 
     function cards(){ 
-        monsters = document.querySelectorAll('.monster')
+        monsters = document.querySelectorAll('.monster');
         oppMonsters = document.querySelectorAll('.opp-monster');
 
         monsters.forEach(monster => {
