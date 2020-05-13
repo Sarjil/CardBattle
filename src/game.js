@@ -169,8 +169,6 @@ class Game{
         
         let userCards = document.getElementById('user-card')
         let enemyCards = document.getElementById('enemy-card')
-        let enemyDiscard = document.getElementById('enemy-discard')
-        let playerDiscard = document.getElementById('player-discard')
         let oppMonsters = document.querySelectorAll('.opp-monster')
         let board = document.getElementById('board-text')
         let monsters = document.querySelectorAll('.monster');
