@@ -1,5 +1,9 @@
 body{background-color:#ccf;color:blue;height:97vh;width:100vw;display:flex;flex-direction:column}.center{display:flex;align-items:center}.card{background:white;height:50vh;width:50vw;border-radius:15px;margin-top:15px;box-shadow:3px 3px 5px 5px #00c,1px 0px 1px #00c}h2{font-size:3rem}.middle-image{border:1px solid black;background-color:beige;width:900px;background-image:url(images/skulls.jpg);background-position:center;background-repeat:no-repeat}
 
+/* *{
+    font-family: chalkduster, fantasy;
+} */
+
 body{
     /* background-color: rgb(65, 82, 87) */
     background-image: url(images/gothic1.jpg);
@@ -16,12 +20,10 @@ body{
 
 #header{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     color: crimson;
-    background-color: black;
-    padding: 20px;
-    
+    background-color: black;    
 }
 
 #middle-left{
@@ -81,14 +83,15 @@ body{
 }
 
 .deck{
-	width:100%;
-	margin: 20px auto;
-	background:grey;
-	border:solid 10px black;
+	width: 33%;
+	margin: 0 auto;
+	background:black;
+	border:solid 1px #808080;
 	padding: 10px;
 	border-radius:10px;
 	text-align: center;
-	color:white;
+    color:crimson;
+    margin-top: 10px;
 }
 
 .monster{
@@ -239,12 +242,68 @@ body{
     margin-top: 120px;
 }
 
-#attack:hover, #defend:hover{
+#instruction-modal{
+    background: black;
+    color: crimson;
+    border: 1px solid red;
+    border-radius: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    font-size: medium;
+    transition: all .4s;
+
+}
+
+#attack:hover, #defend:hover, #instruction-modal:hover{
     border-radius: 50px;
     background-color: crimson;
     color:black;
     border: 1px solid black;
-    
 }
+
+#instructions{
+    text-decoration: underline;
+    font-size: larger;   
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 11; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: black;
+    color: crimson;
+    text-align: center;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: crimson;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 /*# sourceMappingURL=main.css.map*/
