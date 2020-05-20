@@ -9,7 +9,7 @@ class Cards{
         "The Bronze Hybrid",
         "The Brown Statue",
         "The Greater Killer ",
-        "The Painted Vision Behemoth",
+        "The Painted Behemoth",
         "The Mad Grieve ",
         "Foulmask",
         "Spitewings",
@@ -19,7 +19,7 @@ class Cards{
         "The Barren Gnoll",
         "The Needy Thing",
         "The Rabid Shadow Fiend",
-        "The Stormcloud Night Bison",
+        "Stormcloud Night Bison",
         "The Scarred Jester Cobra",
         ];
         
