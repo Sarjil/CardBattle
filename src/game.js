@@ -106,7 +106,7 @@ class Game{
     isOver(){
         if(this.hp <= 0 || this.oppHP <= 0){
             if(this.hp <= 0) alert("You Lose!");
-            if(this.oppHP <= 0) alert("You Win!!!!");
+            if(this.oppHP <= 0) alert("You Win!");
             this.gameStart()
         }
     }
@@ -196,7 +196,7 @@ class Game{
                 that.updateHP();
                 
             } else {
-                board.innerHTML= `<p> Must place a card in order to Attack </p>`
+                board.innerHTML= `<p> Must place a card in order to Attack! </p>`
             }
             });
         })
