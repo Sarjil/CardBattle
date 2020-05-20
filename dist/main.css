@@ -310,4 +310,22 @@ body{
     cursor: pointer;
   }
 
+  footer{
+      background-color: black;
+      color: crimson;
+      display: flex;
+      justify-content: space-between;
+      height: 80px;
+      font-size: 20px;
+      align-items: center;
+  }
+
+a{
+    text-decoration: none;
+    color: crimson;
+    padding-left: 10px;
+}
+
+
+
 /*# sourceMappingURL=main.css.map*/
