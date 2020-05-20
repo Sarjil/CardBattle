@@ -216,7 +216,12 @@ class Game{
 
         function discard(){
             discardBtn.addEventListener('click', function () {
-                userCards.removeChild(userCards.lastChild);
+                if(userCards.childElementCount > 0){
+                    userCards.removeChild(userCards.lastChild);
+                }else{
+                    board.innerHTML = `<p> No cards to discard </p>`
+                }
+
             });
         }
 
