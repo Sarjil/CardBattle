@@ -40,9 +40,20 @@
         If the attack is successful, the opponents card </br>
         will be defeated and the difference between the </br>
         Attack and Defense will be deducted from that players HP. </br>
-        First player to reach 0 loses. </p>
+        Discarding a card will cost 2 HP. First player to reach 0 loses.  </br></p>
     </div>
   </div>
+
+  <div id="replayModal" class="modal">
+    <div class="modal-content">
+      <h3 id="game-outcome"></h3>
+        <h3 id="play-again"> Would you like to play again? </h3>
+        <button id="replay-yes"> Yes </button>
+        <button id="replay-no"> No </button>
+
+    </div>
+  </div>
+
 
   <script>
     let modal = document.getElementById("myModal");
