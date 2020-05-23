@@ -2,8 +2,8 @@ import Cards from './cards';
 
 class Game{
     constructor(){
-        this.hp = 20;
-        this.oppHP = 20;
+        this.hp = 30;
+        this.oppHP = 30;
         this.deck = new Cards();
         this.hand = this.deck.deck.slice(0,5); //not sure how this got nested?
         this.deck = this.deck.deck.slice(5);
@@ -13,15 +13,17 @@ class Game{
         this.updateHp = this.updateHP.bind(this);
         this.opponentDraw = this.opponentDraw.bind(this);
         this.gameStart = this.gameStart.bind(this);
+        this.isOver = this.isOver.bind(this); 
         this.checkCards = this.checkCards.bind(this);
         this.renderHP = this.renderHP.bind(this);
-        this.isOver = this.isOver.bind(this); 
+        this.restart = this.restart.bind(this); 
         this.renderHand(this.hand);
         this.renderDraw();
         this.renderHP();
-        // this.updateHP();
         this.gameStart(this.hp, this.oppHP);
-    }   
+    }
+
+
 
     drawCard(){
         let i = Math.floor((Math.random() * this.deck.length))
@@ -103,14 +105,7 @@ class Game{
         opponent.innerHTML = `<p> Opponents HP: ${this.oppHP} </p>`
     }
 
-    isOver(){
-        if(this.hp <= 0 || this.oppHP <= 0){
-            if(this.hp <= 0) alert("You Lose!");
-            if(this.oppHP <= 0) alert("You Win!");
-            this.gameStart()
-        }
-    }
-
+    
     opponentDraw(){
         let i = Math.floor((Math.random() * this.deck.length))
 
@@ -148,7 +143,7 @@ class Game{
          let monsters = document.querySelectorAll('.monster');
 
         if(userCards.childElementCount < 1){
-            board.innerHTML = `<p> Please place a card </p>`
+            board.innerHTML = `<p> Please place a card</p>`
         }else if(userCards.childElementCount > 1){
             board.innerHTML = `<p> Please place one card at a time </p>`
             document.getElementById("player-cards").append(userCards.lastElementChild)
@@ -157,6 +152,40 @@ class Game{
         }
     }
 
+    restart(){
+        let modal = document.getElementById("replayModal");
+        let yes = document.getElementById("replay-yes");
+        let no = document.getElementById("replay-no");
+        let modalHeader = document.getElementById("game-outcome");
+        modal.style.display= "block";
+
+        yes.onclick = function(){
+            location.reload();
+        }
+
+        no.onclick = function(){
+            document.getElementById("game-outcome").innerHTML = "Thank you for playing! Please checkout my socials!";
+            document.getElementById("play-again").innerHTML = ""
+            document.getElementById("play-again").append(document.getElementById("socials"))
+            // document.getElementById("game-outcome").append(document.getElementById("socials"));
+            document.getElementById("replay-yes").remove();
+            document.getElementById("replay-no").remove();
+        }
+    }
+
+    isOver(){
+        if(this.hp <= 0 || this.oppHP <= 0){
+            if(this.hp <= 0){ 
+                document.getElementById("game-outcome").innerHTML = "You Lose"
+            }else if(this.oppHP <= 0) {
+                document.getElementById("game-outcome").innerHTML = "You Win!"
+            }
+            this.hp = 30;
+            this.oppHP = 30; 
+            this.restart();
+        }
+         
+    }
 
     gameStart(hp, oppHP){
         setInterval((this.checkCards), 1570);
@@ -216,6 +245,8 @@ class Game{
             discardBtn.addEventListener('click', function () {
                 if(userCards.childElementCount > 0){
                     userCards.removeChild(userCards.lastChild);
+                    that.hp -= 2;
+                    that.updateHP();
                 }else{
                     board.innerHTML = `<p> No cards to discard </p>`
                 }

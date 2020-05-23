@@ -1,19 +1,13 @@
 import "./styles/index.scss";
 import "../index.css"
-import Cards from './cards';
-import Game from './game';
-
-
+import Game from "./game";
+import Cards from "./cards";
 
 window.addEventListener("DOMContentLoaded", () => {
-    const card = new Cards(); 
-    const game = new Game(); 
-
-
-
+    let game = new Game();
+    let card = new Cards();
 
     let userCards = document.getElementById('user-card');
-    let enemyCards = document.getElementById('enemy-discard');
     let monsters = document.querySelectorAll('.monster');
     let oppMonsters = document.querySelectorAll('.opp-monster');
 
@@ -25,15 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 monster.addEventListener('click', function () {
                 userCards.appendChild(monster);
             });
-        })
-
-        // oppMonsters.forEach(monster => {
-        //     monster.addEventListener('dblclick', function(){ 
-        //     enemyCards.appendChild(monster); 
-            
-        //     })
-        // })
-        
+        })        
     }
     
     setInterval((cards) , 250);
