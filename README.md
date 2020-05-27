@@ -1,6 +1,6 @@
 # CardBattle
 
-###Technologies
+### Technologies
 * JavaScript
 
 ### Overview
@@ -8,14 +8,14 @@ Monster Card Battle is card game created using pure JavaScript where the player 
 
 [Live Site](https://sarjil.github.io/CardBattle/)
 
-##Functionality & MVP
-* **Game Board
+## Functionality & MVP
+* ** Game Board
   * Design the game board, instructions, and plan game logic
-* **Create Database of Cards 
+* ** Create Database of Cards 
   * Create a deck of 60 cards, consisting of 20 unique monsters
-* **Create Game Logic
+* ** Create Game Logic
   * Draw cards, shuffle, withdraw, discard, attack, and update HP. 
-* **Add styling
+* ** Add styling
 
 
 ```JavaScript
