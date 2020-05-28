@@ -8,6 +8,8 @@ Monster Card Battle is card game created using pure JavaScript where the player 
 
 [Live Site](https://sarjil.github.io/CardBattle/)
 
+![](./screenshot.png) 
+
 ## Functionality & MVP
 * Game Board
   * Design the game board, instructions, and plan game logic
