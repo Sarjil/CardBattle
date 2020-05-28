@@ -51,3 +51,40 @@ If successful, the difference between the users AP and opponents DP will be dedu
 and the opponents AP is more than the users DP, then the difference between the enemys AP and users DP will be deducted from the users HP.
 
 
+```JavaScript
+    getDeck() {
+      let deck = this.deck;
+
+      for (let i = 0; i < this.monsters.length; i++) {
+              let x = Math.floor((Math.random() * this.points.length));
+              let y = Math.floor((Math.random() * (this.points.length - 1))); 
+                //makes sure the monsters defense will never be 10. If defense is 
+                //10, it will be unbeatable.
+              let card = { Monster: this.monsters[i], Attack: this.points[x], Defense: this.points[y] };
+              deck.push(card);
+              deck.push(card);
+              deck.push(card);
+       }
+     
+     return deck;
+    }
+
+```
+This function generates the deck for the game. It iterates through the array of monsters, assigns a random Attack and Defense, and pushes three copies of the card into the deck. Each new game will ensure no monster will have the same stats from the previous game.
+
+```JavaScript
+    shuffle() {
+     let deck = this.deck;
+     for (let i = 0; i < 1000; i++) {
+        let location1 = Math.floor((Math.random() * deck.length));
+        let location2 = Math.floor((Math.random() * deck.length));
+        let temp = deck[location1];
+
+        deck[location1] = deck[location2];
+        deck[location2] = temp;
+     }
+   }
+```
+
+The shuffle function swaps two random cards 1000 times, ensuring a uniquely shuffled deck every game. 
+
